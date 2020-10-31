@@ -1,0 +1,41 @@
+//social cards
+.social-card {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr 2fr;
+}
+
+.social-card div {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+}
+
+//users cards
+
+.user {
+    display: grid;
+    grid-template-columns: 10% 70% 20%;
+    grid-template-rows: 1fr 1fr;   
+}
+
+.recent-activity {
+    grid-template-columns: 10% 85% 5%;
+}
+
+.user img {
+    grid-column: 1/2;
+    grid-row: 1/3;
+    margin: auto;
+}
+
+.user p:nth-child(3) {
+    grid-column: 3/4;
+    grid-row: 1/3;
+    margin: auto;
+}
+
+#right-arrow {
+    grid-column: 3/4;
+    grid-row: 1/3;  
+}
+

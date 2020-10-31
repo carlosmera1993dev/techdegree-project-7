@@ -1,0 +1,266 @@
+$color-primary: rgb(112, 102, 179);
+$color-secondary: rgb(76, 60, 115);
+
+//Top Nav
+.top-nav {
+    display: flex;
+    background-color: rgba(112, 102, 179, 0.9);
+}
+
+.top-nav h1 {
+    margin-right: auto;
+}
+
+.top-nav :not(:first-child) {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.top-nav p {
+    padding-right: 2%;
+    padding-left: 1%;
+}
+
+.top-nav svg {
+    padding-right: 2%;
+    margin-right: 2%;
+    border-right: solid rgba(76, 60, 115, 0.5) 1px;
+}
+
+// Side nav
+
+.side-nav {
+    min-height: 83px;
+    display: flex;
+    justify-content: space-around;
+    background-color: $color-secondary;
+}
+
+.side-nav svg {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+//Search bar 
+
+.search-bar {
+    display: grid;    
+    grid-template-columns: 160px minmax(60%, 2fr);
+}
+
+.search-bar h2 {
+    display: flex;
+    justify-content: center;
+}
+
+.search-bar-box {
+    background-color: rgba(0, 0, 0, 0.05);
+    display: flex;
+    border-left: rgba(0, 0, 0, 0.15) solid 1px;
+    border-bottom: rgba(0, 0, 0, 0.15) solid 1px;
+}
+
+.search-bar-box input {
+    min-width: 45%;
+    min-height: 50%;
+    margin: auto 5% auto 50%;
+    border: rgba(0, 0, 0, 0.15) solid 1px;
+    border-radius: 5px;
+}
+
+//alert message
+
+.alert-message {
+    background-color: $color-primary;
+    color: #fff;
+    max-width: 95%;
+    border-radius: 5px;
+    display: flex;
+    margin-top: 20px;
+    margin: 20px auto;
+}
+
+.alert-message p,
+#close {
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.alert-message p {    
+    padding-left: 2%;
+    margin: 0;
+}
+
+#close {
+    height: 1em;
+    width: 1em;
+    display: inline; 
+    margin-left: auto;   
+    margin-right: 2%;
+    filter: invert(1);
+}
+
+// graphs
+.line-chart-container {
+    width: 95%;    
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+}
+
+.line-chart-container ul li{
+    display: inline;
+}
+
+#lineChart {    
+    border: solid black 1px;
+    max-height: 500px;
+}
+
+.bar-chart-container {
+    width: 95%;    
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+}
+
+#barChart {    
+    border: solid black 1px;
+    max-height: 500px;
+    width: 100%;
+}
+
+.pie-chart-container {
+    width: 95%;    
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+}
+
+#doughnutChart {    
+    border: solid black 1px;
+    max-height: 500px;
+    width: 100%;
+}
+.graph-4 {
+    width: 100px;
+    height: 50px;
+    background-color: blue;
+}
+
+//Social cards
+.social-chart-container {
+    max-width: 95%;
+    margin: auto;
+}
+
+.social-cards-group {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;   
+    max-width: 95%; 
+    margin: auto;
+}
+
+.social-card {
+    border: rgba(0, 0, 0, 0.15) solid 1px;
+    background-color: rgba(0, 0, 0, 0.05);
+    flex-grow: 1;
+    flex-basis: 200px;
+    margin: 20px 20px;
+    height: 120px;    
+}
+
+//users cards
+.card {
+    max-width: 95%;
+    margin: auto;
+}
+
+.user p:nth-child(2) {
+    margin-bottom: 0;
+}
+
+#right-arrow {
+    height: 25px;
+    width: 25px;
+    opacity: .5;
+}
+
+.recent-activity p:nth-child(2) {
+    margin-bottom: 0;    
+}
+
+.recent-activity p:last-child {
+    margin-top: 0;
+}
+
+//Message user and settings
+
+.card input,
+textarea {
+    width: 95%;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.05);
+    border: rgba(0, 0, 0, 0.15) solid 1px;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 25px;
+}
+
+button {
+    height: 55px;
+    border-radius: 5px;
+    color: white;
+    border: none;
+}
+
+#send-button {
+    background-color: $color-primary;
+    width: 102%;    
+    margin: auto;    
+}
+
+.button-container {
+    display: inline-block;
+}
+
+.settings p {
+    display: inline-block;
+}
+.on-button {
+    background-color: $color-primary;
+    display: flex;
+    border-radius: 20px;   
+    width: 90px; 
+    border: lightgray solid 2px;
+}
+
+.on-button p {
+    color: white;
+    margin: 8px auto 8px 8px;
+}
+
+.on-button div {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: white;
+    margin: 7px 8px 8px 0;
+    border: lightgray solid 2px;
+}
+
+#final-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+#save-button {
+    background-color: $color-primary;
+    width: 47%;
+
+}
+
+#cancel-button {
+    background-color: gray;
+    width: 47%;
+}
+
+/////Change settings card layout to grid and fix buttons!!! 

@@ -1,0 +1,40 @@
+
+svg {
+    width: 40px;
+    height: 40px;    
+}
+
+.side-nav svg {
+    opacity: .7;    
+}
+
+.side-nav svg:hover {
+    opacity: 1;    
+}
+
+//social cards
+
+.social-card div {
+    background-color: $color-primary;   
+    width: 65px; 
+    height: 65px;
+    border-radius: 50%;
+    position: relative;
+    margin: auto;
+}
+
+.social-card div svg {
+    position: absolute;
+    top: 25%;
+    left: 20%;
+}
+
+#facebook-icon svg {
+    position: absolute;
+    top: 20%;
+    left: 20%;
+}
+
+.social-card path {
+    fill: white;
+}
