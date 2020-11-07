@@ -1,15 +1,68 @@
+//general fonts
+
 * {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Noto Sans JP', sans-serif;   
 }
+
+h3,
+li {
+    font-size: .9em;
+}
+
+h2,
+h3 {
+    font-weight: 400;
+}
+
+h2,
+h3,
+.social-card p,
+.user p,
+li,
+.button-container p {
+    color: rgba($color: #000000, $alpha: .7) 
+}
+
+a {
+    text-decoration: none;
+}
+
+//top nav 
 
 .top-nav {
     color: white; 
 }
 
-.top-nav h2 {
-    font-weight: 600;
+.top-nav h1 {
+    font-weight: 500;
 }
 
 .top-nav span {
     font-weight: 100;
+}
+
+//alert message
+
+.alert-message span {
+    font-weight: 500;
+    margin-right: 10px;
+}
+
+.alert-message {
+    font-weight: 100;
+}
+
+
+//social cards
+
+.social-card p {
+    font-size: 2.5em;
+    font-weight: 100;
+}
+
+//user cards 
+
+.user p,
+.user a {
+    font-size: .9em;
 }
