@@ -38,3 +38,24 @@ svg {
 .social-card path {
     fill: white;
 }
+
+//animations 
+
+@keyframes ring {
+    20%{
+        transform: rotateX(30deg);
+    }
+    40%{
+        transform: rotateX(-30deg);
+    }
+    60%{
+        transform: rotateX(50deg);
+    }
+    80%{
+        transform: rotateX(-50deg);
+    }
+}
+
+.top-nav svg:hover {
+    animation: ring 2s ease-in;
+}
