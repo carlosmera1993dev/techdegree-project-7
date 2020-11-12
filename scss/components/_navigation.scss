@@ -163,12 +163,13 @@ li {
     margin-bottom: 20px;
 }
 
-li:hover {
+li:not(.selected):hover {
     background-color: rgba(112, 102, 179, 0.4);    
 }
 
 .selected {
-    background-color: rgba(67, 187, 87, 0.4);  
+    background-color: rgba(29, 223, 62, 0.658);  
+    color: white;
 }
 
 h3,
@@ -176,15 +177,17 @@ ul {
     margin-bottom: 30px;
 }
 
+
 .line-chart-container {
     width: 95%;    
     margin-left: 2.5%;
-    margin-right: 2.5%;
+    margin-right: 2.5%;    
 }
 
 .line-chart-container ul li{
     display: inline;
 }
+
 
 #lineChart,
 #barChart,
@@ -199,20 +202,18 @@ ul {
     border-top: rgba(0, 0, 0, 0.2) solid 1px;
 }
 
-#lineChart {    
-    border: solid black 1px;
-    max-height: 500px;
-}
-
 .bar-chart-container {
     width: 95%;    
     margin-left: 2.5%;
     margin-right: 2.5%;
 }
 
-#barChart {    
-    border: solid black 1px;
-    max-height: 500px;
+canvas {
+    max-width: 100%;
+}
+
+#barChart {        
+    max-height: 400px;
     width: 100%;
 }
 
@@ -222,9 +223,8 @@ ul {
     margin-right: 2.5%;
 }
 
-#doughnutChart {    
-    border: solid black 1px;
-    max-height: 500px;
+#doughnutChart {        
+    max-height: 400px;
     width: 100%;
 }
 .graph-4 {

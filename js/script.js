@@ -15,15 +15,11 @@ const sendButton = document.querySelector('#send-button');
 const emptyFieldMessage = document.querySelector('.message-one');
 const sentMessage = document.querySelector('.message-two');
 //on and off buttons
-// const onOffButton = document.querySelector('.on-button');
-// const onButtonText = document.querySelector('.on-button-text');
-// const buttonDiv = document.querySelector('.btn-div');
-
 const onOffButton = document.querySelectorAll('.on-button');
 const onButtonText = document.querySelectorAll('.on-button-text');
 const buttonDiv = document.querySelectorAll('.btn-div');
-
-
+//Chart selectors
+const chartDataSelectors = document.querySelectorAll('li');
 
 //dropdown menu
 
@@ -158,3 +154,165 @@ for (let i = 0; i < onOffButton.length; i++) {
     onOffButton[i].className = localStorage.getItem(`class${i}`);
     buttonDiv[i].className = localStorage.getItem(`buttonClass${i}`);
 }
+
+//Charts
+
+
+//Line Charts
+
+function chartSelectorClearClass() {
+  for (let i = 0;i < chartDataSelectors.length; i++) {
+    chartDataSelectors[i].className = '';
+  }
+}
+
+for (let i = 0; i < chartDataSelectors.length; i++) {
+  chartDataSelectors[i].addEventListener('click', ()=> {
+    if (chartDataSelectors[i] == chartDataSelectors[0]) {
+      lineChart.data.datasets[0].data = [680,1000,750,1250,1750,1250,1500,1000,1500,2000,1500];
+      lineChart.update();
+      barChart.data.datasets[0].data = [140,75,175,100,225,200,100];
+      barChart.update();
+      doughnutChart.data.datasets[0].data = [140,75,17];
+      doughnutChart.update();
+      chartSelectorClearClass();
+      chartDataSelectors[i].className = "selected";
+    } else if (chartDataSelectors[i] == chartDataSelectors[1]) {
+      lineChart.data.datasets[0].data = [1000,1900,750,1000,1750,800,1500,1000,500,1000,500];
+      lineChart.update();
+      barChart.data.datasets[0].data = [50,175,75,100,215,160,190];
+      barChart.update();
+      doughnutChart.data.datasets[0].data = [25,115,107];
+      doughnutChart.update();
+      chartSelectorClearClass();
+      chartDataSelectors[i].className = "selected";
+    } else if (chartDataSelectors[i] == chartDataSelectors[2]) {
+      lineChart.data.datasets[0].data = [1500,1750,900,1050,1600,1200,1000,1800,2500,2000,1500];
+      lineChart.update();
+      barChart.data.datasets[0].data = [178,75,135,120,115,240,120];
+      barChart.update();
+      doughnutChart.data.datasets[0].data = [90,175,27];
+      doughnutChart.update();
+      chartSelectorClearClass();
+      chartDataSelectors[i].className = "selected";
+    } else if (chartDataSelectors[i] == chartDataSelectors[3]) {
+      lineChart.data.datasets[0].data = [2500,700,1750,2250,750,850,500,1400,1200,1000,2200];
+      lineChart.update();
+      barChart.data.datasets[0].data = [145,175,75,150,225,170,140];
+      barChart.update();
+      doughnutChart.data.datasets[0].data = [55,195,117];
+      doughnutChart.update();
+      chartSelectorClearClass();
+      chartDataSelectors[i].className = "selected";
+    }        
+  })
+}
+
+
+const myLineChart = document.getElementById('lineChart').getContext('2d');
+Chart.defaults.global.legend.display = false; 
+Chart.defaults.global.legend.labels.fontColor = "rgba(0,0,0,.6)";
+
+let lineChart = new Chart (myLineChart, {
+    type:'line',
+    data: {
+        labels:['16-22', '23-29', '30-5', '6-12', '13-19', '20-26', '27-3', '4-10', '11-17', '18-24', '25-31'],
+        datasets:[{
+            label: null,
+            lineTension: 0,                                
+            data: [680,1000,750,1250,1750,1250,1500,1000,1500,2000,1500],                                                              
+            backgroundColor: 'rgba(112, 102, 179,.3)',
+            borderColor: 'rgba(76, 60, 115,.8)',
+            borderWidth: 1,
+            pointBackgroundColor: "rgba(255,255,255,.8)",
+            pointRadius: 6,
+            pointBorderWidth: 2
+        }]
+    },
+    options:{                                                              
+        scales: {
+            yAxes: [{
+                gridLines: {
+                    offsetGridLines: true,                                        
+                },                                    
+                ticks: {        
+                    min: 500,                                
+                    max: 2500,                                                                               
+                }
+            }],
+            xAxes: [{
+                gridLines: {
+                    offsetGridLines: true,                                         
+                },
+
+            }]
+        }
+    }
+});
+
+//bar chart
+
+const myBarChart = document.getElementById('barChart').getContext('2d');
+let barChart = new Chart (myBarChart, {
+  type:'bar',
+  data: {
+      labels:['S','M','T','W','T','F','S'],
+      datasets:[{
+          label: null,                              
+          data: [140,75,175,100,225,200,100],                                                              
+          backgroundColor: 'rgba(112, 102, 179, 1)',
+          maxBarThickness: 35,
+          minBarLength: 8
+      }]
+  },
+  options:{                                                       
+    scales: {
+        yAxes: [{
+            gridLines: {
+                offsetGridLines: true,                                        
+            },                                    
+            ticks: {        
+                min: 0,                                
+                max: 250,                                                                               
+            }
+        }],
+        xAxes: [{
+            gridLines: {
+                offsetGridLines: true,                                    
+            },
+
+        }]
+    }
+}
+});
+
+
+//doughnut chart
+
+const myDoughnutChart = document.getElementById('doughnutChart').getContext('2d');
+let doughnutChart = new Chart (myDoughnutChart, {
+  type:'doughnut',
+  data: {
+      labels:['Phones','Tablets','Desktop'],
+      datasets:[{
+          label: null,
+          lineTension: 0,                                
+          data: [140,75,17],                                                              
+          backgroundColor: [
+            'rgba(112, 102, 179, 1)',
+            'rgba(129, 245, 66, .7)',
+            'rgba(66, 230, 245, .7)'
+        ],
+      }]
+  },
+  options:{                                                       
+          legend: {
+            display: true,
+            position: 'right',
+            labels: {
+              boxWidth: 40,
+              fontSize: 20
+            }
+          }
+  }
+});

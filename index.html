@@ -130,93 +130,16 @@
                         <li>Weekly</li>
                         <li>Monthly</li>            
                     </ul>
-                </div>            
-                                
-                <canvas id="lineChart"></canvas>
-                <script>
-                    const myChart = document.getElementById('lineChart').getContext('2d');
-    
-                    let lineChart = new Chart (myChart, {
-                        type:'line', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
-                        data: {
-                            labels:['16-22', '23-29', '30-5', '6-12', '13-19', '20-26', '27-3', '4-10', '11-17', '18-24', '25-31'],
-                            datasets:[{
-                                label: 'sdfasf',
-                                lineTension: 0,
-                                data:[500,1000,750,1250,1750,1250,1500,1000,1500,2000,1500]
-                            }]
-                        },
-                        options:{
-                            scales: {
-                                yAxes: [{
-                                    ticks: {
-                                        min: 500,
-                                        max: 2500
-                                    }
-                                }]
-                            }
-                        }
-                    });
-                </script>
-                
+                </div>                 
+                <canvas id="lineChart" height="70px"></canvas>               
             </div>
             <div class="bar-chart-container">
                 <H3>DAILY TRAFFIC</H3>            
-                    <canvas id="barChart"></canvas>
-                        <!-- <script>
-                            const myChart = document.getElementById('barChart').getContext('2d');
-    
-                            let barChart = new Chart (myChart, {
-                                type:'bar', // bar, horizontalBar, pie, bar, doughnut, radar, polarArea
-                                data: {
-                                    labels:['16-22', '23-29', '30-5', '6-12', '13-19', '20-26', '27-3', '4-10', '11-17', '18-24', '25-31'],
-                                    datasets:[{
-                                        label: 'sdfasf',
-                                        barTension: 0,
-                                        data:[500,1000,750,1250,1750,1250,1500,1000,1500,2000,1500]
-                                    }]
-                                },
-                                options:{
-                                    scales: {
-                                        yAxes: [{
-                                            ticks: {
-                                                min: 500,
-                                                max: 2500
-                                            }
-                                        }]
-                                    }
-                                }
-                            });
-                        </script>             -->
+                    <canvas id="barChart"></canvas>                        
             </div>
             <div class="pie-chart-container">
                 <H3>MOBILE USERS</H3>            
-                    <canvas id="doughnutChart"></canvas>
-                        <!-- <script>
-                            const myChart = document.getElementById('doughnutChart').getContext('2d');
-    
-                            let doughnutChart = new Chart (myChart, {
-                                type:'doughnut', // bar, horizontalBar, pie, doughnut, doughnut, radar, polarArea
-                                data: {
-                                    labels:['16-22', '23-29', '30-5', '6-12', '13-19', '20-26', '27-3', '4-10', '11-17', '18-24', '25-31'],
-                                    datasets:[{
-                                        label: 'sdfasf',
-                                        doughnutTension: 0,
-                                        data:[500,1000,750,1250,1750,1250,1500,1000,1500,2000,1500]
-                                    }]
-                                },
-                                options:{
-                                    scales: {
-                                        yAxes: [{
-                                            ticks: {
-                                                min: 500,
-                                                max: 2500
-                                            }
-                                        }]
-                                    }
-                                }
-                            });
-                        </script>             -->
+                    <canvas id="doughnutChart"></canvas>                        
             </div>
             <div class="social-chart-container">            
                 <H3>SOCIAL STATS</H3>
