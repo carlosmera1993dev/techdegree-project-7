@@ -22,10 +22,22 @@ $color-secondary: rgb(76, 60, 115);
     padding-left: 1%;
 }
 
+.dot-container {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: lawngreen;
+    top: -4px;
+    left: 30px;
+    transition: opacity .2s ease-in;
+}
+
 .dropdown {
     margin-right: 2%;
     border-right: solid rgba(76, 60, 115, 0.5) 1px;
     position: relative;
+    padding-right: 10px;
 }
 
 .drop-options {

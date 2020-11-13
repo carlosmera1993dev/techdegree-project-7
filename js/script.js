@@ -8,6 +8,7 @@ const alertMessageSymbol = document.querySelector('#close');
 //dropdown menu
 const bell = document.querySelector('.dropdown');
 const dropdownMenu = document.querySelector('.drop-options');
+const bellDot = document.querySelector('.dot-container');
 //message fields
 const searchUser = document.querySelector('#searchUser');
 const messageUser = document.querySelector('#messageUser');
@@ -18,6 +19,7 @@ const sentMessage = document.querySelector('.message-two');
 const onOffButton = document.querySelectorAll('.on-button');
 const onButtonText = document.querySelectorAll('.on-button-text');
 const buttonDiv = document.querySelectorAll('.btn-div');
+const selectMenu = document.querySelector('select');
 //Chart selectors
 const chartDataSelectors = document.querySelectorAll('li');
 
@@ -26,8 +28,10 @@ const chartDataSelectors = document.querySelectorAll('li');
 bell.addEventListener('click', () => {
     if(dropdownMenu.className == "drop-options drop-hide") {
         dropdownMenu.className = "drop-options drop-show";
+        bellDot.style.opacity = 0;
     } else {
         dropdownMenu.className = "drop-options drop-hide";
+        bellDot.style.opacity = 1;
     }
 })
 
@@ -57,7 +61,7 @@ sendButton.addEventListener('click', ()=> {
 })
 
 //autocomplete function and array of possible names 
-const autoNames = ['Victoria Chambers','Dale Byrd','Dawn Wood','Dan Oliver'];
+const autoNames = ['Victoria Chambers','Dale Byrd','Dawn Wood','Dan Oliver','Ana Maria'];
 
 function autocomplete(inp, arr) {
     var currentFocus;    
@@ -149,10 +153,15 @@ for (let i = 0; i < onOffButton.length; i++) {
         })
 }
 
+selectMenu.addEventListener('change', ()=> {
+  localStorage.setItem('selectOption', selectMenu.selectedIndex);
+})
+
 for (let i = 0; i < onOffButton.length; i++) {
     onButtonText[i].textContent = localStorage.getItem(`text${i}`);
     onOffButton[i].className = localStorage.getItem(`class${i}`);
     buttonDiv[i].className = localStorage.getItem(`buttonClass${i}`);
+    selectMenu.selectedIndex = localStorage.getItem('selectOption');
 }
 
 //Charts
