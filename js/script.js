@@ -6,6 +6,7 @@
 const alertMessage = document.querySelector('.alert-message');
 const alertMessageSymbol = document.querySelector('#close');
 //dropdown menu
+const body = document.querySelector('main');
 const bell = document.querySelector('.dropdown');
 const dropdownMenu = document.querySelector('.drop-options');
 const bellDot = document.querySelector('.dot-container');
@@ -33,6 +34,11 @@ bell.addEventListener('click', () => {
         dropdownMenu.className = "drop-options drop-hide";
         bellDot.style.opacity = 1;
     }
+})
+
+body.addEventListener('click', ()=> {
+  dropdownMenu.className = "drop-options drop-hide";
+  bellDot.style.opacity = 1;
 })
 
 //Close the alert message

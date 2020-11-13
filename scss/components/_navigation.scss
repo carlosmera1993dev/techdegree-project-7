@@ -422,10 +422,12 @@ button {
 .settings p {
     display: inline-block;
 }
-.on-button {    
-    display: flex;
-    border-radius: 20px;   
-    width: 90px; 
+
+.on-button {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    border-radius: 20px;
+    width: 90px;
     height: 32px;
     margin-top: 5px;
     margin-left: 20px;
@@ -434,17 +436,39 @@ button {
 .onClass {
     background-color: $color-primary;
     border: lightgray solid 2px;
+    transition: background-color .2s ease-in, border .2s ease-in;
 }
 
 .offClass {
     background-color: rgba(0, 0, 0, 0.2);
     color: black;
     border: rgba(0, 0, 0, 0.507) solid 2px;
+    transition: background-color .2s ease-in, border .2s ease-in;
+}
+
+.offClass div {
+    transform: translateX(-50px);
+    transition: transform .2s ease-in;
+}
+
+.onClass div {
+    transform: translateX(0px);
+    transition: transform .2s ease-in;
+}
+
+.offClass p {
+    transform: translateX(45px);
+    transition: transform .2s ease-in;
+}
+
+.onClass p {
+    transform: translateX(0px);
+    transition: transform .2s ease-in;
 }
 
 .on-button p {
     color: white;
-    margin: 8px auto 8px 8px;
+    margin: 6px auto 8px 8px;
 }
 
 .btn-div {
@@ -453,6 +477,7 @@ button {
     border-radius: 50%;
     background-color: white;
     margin: 4px 6px 8px 0;
+
 }
 
 .div-on {
@@ -460,7 +485,7 @@ button {
 }
 
 .div-off {
-    border: rgba(0, 0, 0, 0.507) solid 2px;
+    border: rgba(0, 0, 0, 0.507) solid 2px;    
 }
 
 select {
